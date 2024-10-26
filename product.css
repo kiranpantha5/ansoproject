@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-details {
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+}
+
+.product-details h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.brand {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.current-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-right: 10px;
+}
+
+.old-price {
+    font-size: 1.1em;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.discount {
+    font-size: 1em;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.stock, .delivery, .promotions, .ratings {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.sizes button {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px 5px 5px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sizes button:hover, .sizes button:focus {
+    background-color: #333;
+    color: #fff;
+}
+
+.size-guide {
+    font-size: 0.9em;
+    color: #3498db;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.add-to-cart:hover {
+    background-color: #c0392b;
+}
+
+
+/* Buy Now Button */
+.buy-now {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.buy-now:hover {
+    background-color: #229954;
+    transform: scale(1.05);
+}
+
+/* Image Zoom on Hover */
+.product-image {
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.product-image img {
+    transition: transform 0.4s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Rating Modal */
+.rating-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rating-modal .rating-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.rating-modal h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.rating-stars .star {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.rating-stars .star:hover,
+.rating-stars .star.selected {
+    color: #e74c3c;
+}
+
+.rate-button {
+    font-size: 0.9em;
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.rating-modal.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.submit-rating, .close-rating {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .product-container {
+        flex-direction: row;
+        padding: 30px;
+    }
+    
+    .product-image {
+        flex: 1;
+        padding-right: 20px;
+    }
+    
+    .product-details {
+        flex: 1.5;
+    }
+}

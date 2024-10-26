@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="deliver.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <form class="checkout-form" action="process_order.php" method="post" enctype="multipart/form-data">
+            <!-- Delivery Information -->
+            <h2>Delivery Information</h2>
+             
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" placeholder="123 Main St, City, Country" required></textarea>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Your City" required>
+
+            <label for="postal-code">Postal Code:</label>
+            <input type="text" id="postal-code" name="postal-code" placeholder="123456" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+977 9812345678" required>
+
+            <!-- Payment Method -->
+            <h2>Payment Method</h2>
+            <div class="payment-methods">
+                <label>
+                    <input type="radio" name="payment" value="esewa" required>
+                    <span class="payment-option">eSewa</span>
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="khalti">
+                    <span class="payment-option">Khalti</span>
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="cod">
+                    <span class="payment-option">Cash on Delivery</span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+             <button type="submit" class="place-order" >Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

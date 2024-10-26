@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Product Page</title>
+</head>
+<body>
+    <div class="product-container">
+        <!-- Product Image Section -->
+        <div class="product-image">
+            <img src="women3.jpg" alt="Stylish Blouse"> <!-- Replace with actual product image path -->
+        </div>
+        
+        <!-- Product Details Section -->
+        <div class="product-details">
+            <h2>Stylish Blouse</h2>
+            <div class="brand">Anso Fashion</div>
+            
+            <!-- Price Section -->
+            <div class="price">
+                <span class="current-price">$49.99</span>
+                <span class="old-price">$59.99</span>
+                <span class="discount">20% OFF</span>
+            </div>
+            <div class="stock">In Stock</div>
+            <div class="delivery">Free Delivery</div>
+            
+            <!-- Ratings Section -->
+            <div class="ratings">
+                <span class="stars">★★★★☆</span> (200 Reviews)
+                <button class="rate-button">Rate this product</button>
+            </div>
+            
+            <!-- Rating Popup Modal -->
+            <div class="rating-modal hidden">
+                <div class="rating-content">
+                    <h3>Rate this product</h3>
+                    <div class="rating-stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <button class="submit-rating">Submit Rating</button>
+                    <button class="close-rating">Close</button>
+                </div>
+            </div>
+            
+            <!-- Size Selection -->
+            <div class="size-variation">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <button>S</button>
+                    <button>M</button>
+                    <button>L</button>
+                    <button>XL</button>
+                </div>
+                <a href="#" class="size-guide">Size Guide</a>
+            </div>
+            
+            <!-- Add to Cart -->
+            <button class="add-to-cart">Add to Cart</button>
+            <a href="deliver.html"><button class="buy-now">Buy Now</button></a>
+
+            
+            <!-- Promotions -->
+            <div class="promotions">Promotions: Buy 2, Get 1 Free!</div>
+        </div>
+    </div>
+    
+    <script src="product.js"></script> <!-- Link to JavaScript file for rating functionality -->
+</body>
+</html>

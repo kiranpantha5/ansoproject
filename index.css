@@ -1,0 +1,717 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* Header */
+header {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+header.sticky {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Links */
+nav ul.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul.nav-links li a {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul.nav-links li a:hover {
+    color: #ff6b6b;
+}
+
+/* Responsive Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 780px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        gap: 20px;
+        top: 60px;
+        right: 20px;
+        background-color: transparent;
+        width: 100%;
+        text-align: center;
+        z-index: 999; /* Ensure it's above other content */
+      
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Hero Section */
+    #hero {
+        min-height: 100vh; /* Ensure the hero section maintains its height */
+        padding: 20px; /* Add padding for better spacing */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem; /* Smaller size for h2 */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller size for paragraph */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Adjust padding for button */
+        font-size: 0.9rem; /* Smaller button text */
+    }
+
+    /* Logo */
+    .logo h1 {
+        font-size: 1.5rem; /* Smaller logo text */
+    }
+
+    nav ul.nav-links li a {
+        font-size: 0.9rem; /* Smaller font for nav links */
+    }
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh; /* Maintain height for larger screens */
+    background-image: url('img1.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+   
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 60%;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 0 20px;
+    
+    
+    
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    animation: fadeIn 2s ease-in-out;
+    
+}
+
+.cta-button  {
+    padding: 15px 40px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    animation: bounceIn 2s ease-in-out;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #ff4747;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* Mobile Responsive Styling */
+@media (max-width: 350px) {
+    #hero {
+        min-height: 100vh; /* Keep the height consistent */
+        padding: 10px; /* Add slight padding for smaller screens */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 0 5px; /* Reduce padding for very small screens */
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem; /* Smaller size for h2 */
+        line-height: 1.2; /* Adjust line height for better spacing */
+        margin-bottom: 10px; /* Adjust margin for better spacing */
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Smaller size for paragraph */
+        line-height: 1.5; /* Improve readability with line height */
+        margin-bottom: 15px; /* Space below paragraph */
+    }
+
+    .cta-button {
+        padding: 8px 15px; /* Adjust padding for button */
+        font-size: 0.8rem; /* Smaller button text */
+        border-radius: 30px; /* Adjust border radius for smaller buttons */
+    }
+
+    /* Logo */
+    .logo h1 {
+        font-size: 1.2rem; /* Smaller logo text */
+    }
+
+    nav ul.nav-links li a {
+        font-size: 0.8rem; /* Smaller font for nav links */
+    }
+
+    nav ul.nav-links {
+        gap: 10px; /* Reduce gap between nav links */
+    }
+}
+
+
+
+
+
+
+
+
+        /* Products Container */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: white; /* White background for cards */
+            border-radius: 10px; /* Rounded corners */
+            padding: 15px; /* Padding for card content */
+            margin: 15px; /* Margin for card spacing */
+            text-align: center;
+            width: calc(23% - 30px); /* Four cards per row with adjusted spacing */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+        }
+
+        .product-card:hover {
+            transform: translateY(7px); /* Lift effect on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Rounded image corners */
+            transition: transform 0.3s; /* Smooth scale effect on image hover */
+        }
+
+        .product-card:hover img {
+            transform: scale(1.04); /* Slightly scale image on hover */
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff4757; /* Red badge */
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+       
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(45% - 20px); /* Adjust width for tablets (two cards per row) */
+            }
+
+            #hero {
+                height: 300px; /* Reduced height for smaller screens */
+            }
+
+            #hero h2 {
+                font-size: 2.5rem; /* Smaller font size */
+            }
+
+            #hero p {
+                font-size: 1.2rem; /* Smaller font size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 20px); /* Stack cards for mobile (one card per row) */
+            }
+
+            .products {
+                justify-content: center; /* Center items on mobile */
+            }
+
+            #hero {
+                height: 250px; /* Further reduced height */
+            }
+
+            #hero h2 {
+                font-size: 2rem; /* Smaller font size */
+            }
+
+            #hero p {
+                font-size: 1rem; /* Smaller font size */
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+}
+
+.modal-content {
+    background-color: #fff; /* White background */
+    margin: auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Full width on mobile */
+    max-width: 500px; /* Max width */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    text-align: center;
+    animation: fadeIn 0.3s ease; /* Animation for modal */
+}
+
+.modal-content img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for image */
+    margin-bottom: 15px; /* Space below image */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation for Modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles for Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Wider on small screens */
+    }
+}
+
+.add-to-cart,
+.buy-now {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0; /* Space between buttons */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.add-to-cart:hover,
+.buy-now:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+@media (max-width: 350px) {
+    .modal-content {
+        padding: 15px; /* Less padding on small screens */
+    }
+
+    .add-to-cart,
+    .buy-now {
+        width: 100%; /* Full width buttons */
+        font-size: 14px; /* Smaller font */
+    }
+}
+
+
+
+
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fff; /* White background */
+    margin: 5% auto; /* Center the modal */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Set a max width */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s; /* Fade-in effect */
+    text-align: center; /* Center text in modal */
+}
+
+.modal-content h3 {
+    color: #ff6b6b; /* Brand color for titles */
+    font-size: 1.5rem; /* Title size */
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+.modal-content img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Spacing below image */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: #333; /* Darker text for price */
+    font-weight: bold;
+    margin-bottom: 20px; /* Spacing below price */
+}
+
+.add-to-cart, .buy-now {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 48%; /* Make buttons responsive */
+}
+
+.add-to-cart {
+    background-color: #ff6b6b; /* Red for add to cart */
+    color: white;
+}
+
+.add-to-cart:hover {
+    background-color: #ff4747; /* Darker shade on hover */
+}
+
+.buy-now {
+    background-color: #4caf50; /* Green for buy now */
+    color: white;
+}
+
+.buy-now:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right; /* Align to the right */
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Login/Sign-Up Modal styles */
+#login-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+}
+
+/* Modal Content Styling */
+#login-modal .modal-content {
+    background-color: #fff; /* White background */
+    margin: 10% auto; /* Center the modal */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Set a max width */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s; /* Fade-in effect */
+    text-align: center; /* Center text in modal */
+}
+
+/* Title Styling */
+#login-modal h3 {
+    color: #ff6b6b; /* Brand color for titles */
+    font-size: 1.5rem; /* Title size */
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+/* Label Styling */
+#login-modal label {
+    display: block;
+    margin: 10px 0 5px; /* Spacing for labels */
+    color: #333;
+}
+
+/* Input Styling */
+#login-modal input[type="text"],
+#login-modal input[type="password"] {
+    width: 100%; /* Full width for better mobile responsiveness */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Border for input */
+    margin-bottom: 15px; /* Spacing below input */
+    box-sizing: border-box; /* Ensures consistent padding */
+}
+
+/* Button Styling */
+#login-modal button {
+    padding: 10px 15px;
+    background-color: #ff6b6b; /* Red for button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Full width */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Button Hover Effect */
+#login-modal button:hover {
+    background-color: #ff4747; /* Darker shade on hover */
+}
+
+/* Additional Paragraph Styling */
+#login-modal p {
+    margin-top: 10px; /* Spacing for paragraph */
+    color: #555;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+        
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

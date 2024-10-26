@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Instructions</title>
+    <link rel="stylesheet" href="paymethod.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Payment Instructions</h1>
+        <p>Thank you for your order! To complete your purchase, please follow the payment instructions below:</p>
+        
+        <h2>Payment Options</h2>
+        
+        <div class="payment-methods">
+            <div class="method">
+                <h3>Online Payment</h3>
+                <p>You can pay using eSewa or Khalti. Simply follow the steps below:</p>
+                <ol>
+                    <li>Log in to your eSewa/Khalti account.</li>
+                    <li>Choose the option to send money.</li>
+                    <li>Enter our office number: <strong>+977 9812345678</strong></li>
+                    <li>Enter the amount and complete the transaction.</li>
+                    <li>Save the transaction receipt for your records.</li>
+                </ol>
+            </div>
+            
+            <div class="method">
+                <h3>Cash on Delivery</h3>
+                <p>If you prefer to pay in cash, please prepare the exact amount in cash. Our delivery personnel will collect the payment when delivering your order.</p>
+            </div>
+        </div>
+        
+        <h2>Upload Transaction Statement</h2>
+<form class="upload-form" action="payment-process.php" method="post" enctype="multipart/form-data">
+    <label for="name">Your esewa  Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    
+
+    <label for="phone">Your e sewa  Number:</label>
+    <input type="text" id="phone" name="phone" required>
+
+    <label for="code">Transaction code:</label>
+    <input type="text" id="code" name="code" required>
+    
+    <label for="transaction-statement">Select Transaction Receipt:</label>
+    <input type="file" id="transaction-statement" name="transaction-statement" accept="image/*,application/pdf" required>
+    
+    <button type="submit" class="upload-button">Upload Receipt</button>
+</form>
+
+       
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+        <p><strong>Phone:</strong> +977 9812345678</p>
+        <p><strong>Email:</strong> support@yourstore.com</p>
+        
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>
